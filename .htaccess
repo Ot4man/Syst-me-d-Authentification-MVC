@@ -1,3 +1,8 @@
 RewriteEngine On
-RewriteRule ^$ public/ [L]
-RewriteRule (.*) public/$1 [L]
+
+# Block access to internal folders
+RewriteRule ^(app|config|database|uml)/ - [F,L]
+
+# Redirect everything to public/
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
