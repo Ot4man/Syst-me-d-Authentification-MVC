@@ -37,7 +37,7 @@ $router->add('GET', 'recruiter/dashboard', [RecruiterController::class, 'dashboa
 $router->add('GET', 'admin/dashboard', [AdminController::class, 'dashboard'], true);
 
 
-//Dispatch router
+//Dispatch routerr
 
 $router->dispatch();
 
